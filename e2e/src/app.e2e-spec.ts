@@ -21,6 +21,19 @@ describe('workspace-project App', () => {
     expect(errorElement.get(0).getText()).toContain('Username should not be less the 3 chars');
      browser.sleep(1500);
   })
+
+  
+  it('should navigate to home page when login succeeds',()=>{
+    browser.get('login');
+    const inputElements = element.all(by.css('input'))
+    inputElements.get(0).sendKeys('admin');
+    inputElements.get(1).sendKeys('password')
+
+    const button  = element(by.css('button'));
+    button.click();
+    expect(browser.getCurrentUrl()).toContain('home')
+    browser.sleep(1500);
+  })
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
     const logs = await browser.manage().logs().get(logging.Type.BROWSER);
