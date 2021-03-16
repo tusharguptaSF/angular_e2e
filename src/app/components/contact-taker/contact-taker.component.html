@@ -1,0 +1,32 @@
+<mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Add Contact
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <!-- <form class="example-form"> -->
+        <mat-form-field >
+          <mat-label>User Name</mat-label>
+          <input [(ngModel)] = "contactModule.name"
+                 matInput
+                placeholder="Enter User Name" >
+        </mat-form-field>
+        <mat-form-field >
+          <mat-label>Phone Number</mat-label>
+          <input [(ngModel)] = "contactModule.mobile"
+                 matInput
+                placeholder="Enter The Phone number" >
+        </mat-form-field>
+        <mat-form-field >
+          <mat-label>Email</mat-label>
+          <input [(ngModel)] = "contactModule.email"
+                 matInput
+                placeholder="Enter The Email id" >
+        </mat-form-field>
+        <mat-divider></mat-divider>
+        <button mat-raised-button color="primary" (click) = "addContact()">Submit</button>
+      <!-- </form> -->
+    </mat-expansion-panel>
+
+  
